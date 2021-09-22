@@ -8,7 +8,7 @@ public class Anagram {
 
 	public static void main(String[] args) throws IOException {
 		
-		Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         Reverse.reverseOfWordsExpectForSymbols(scanner.nextLine());
        
 	}
