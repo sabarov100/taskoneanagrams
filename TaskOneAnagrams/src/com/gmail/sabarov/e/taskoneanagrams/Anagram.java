@@ -9,7 +9,7 @@ public class Anagram {
 	public static void main(String[] args) throws IOException {
 		
 		Scanner scanner = new Scanner(System.in);
-        System.out.println(Reverse.reverseOfWordsExpectForSymbols(scanner.nextLine()));
+        Reverse.reverseOfWordsExpectForSymbols(scanner.nextLine());
        
 	}
 
