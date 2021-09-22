@@ -3,6 +3,8 @@ package com.gmail.sabarov.e.taskoneanagrams;
 import java.io.IOException;
 
 import java.util.LinkedList;
+import java.util.List;
+import java.util.StringJoiner;
 
 import static java.lang.Character.isLetter;
 
@@ -10,17 +12,15 @@ public class Reverse {
 
 	public static String reverseOfWordsExpectForSymbols(String argument) throws IOException {
 		
-		StringBuilder builder = new StringBuilder();
+		String whitespace = " ";
+		StringJoiner stringJoiner = new StringJoiner(whitespace);
 		String solution = reverseWord(argument);
-		String[] words = argument.split(" ");
+		String[] words = argument.split(whitespace);
 		if (words.length > 1) {
 			for (int i = 0; i < words.length; i++) {
-				builder.append(reverseWord(words[i]));
-			    if(i != (words.length - 1)) {
-			    	builder.append(" ");
-			    }
+				stringJoiner.add(reverseWord(words[i]));
 			}
-			solution = builder.toString();
+			solution = stringJoiner.toString();
 		}
 		return solution;
 	}
@@ -28,7 +28,7 @@ public class Reverse {
 	public static String reverseWord(String word) {
 		
 		StringBuilder builder = new StringBuilder();
-		LinkedList<Character> revers = new LinkedList<Character>();
+		List revers = new LinkedList();
 		char[] letters = word.toCharArray();
 
 		for (int i = 0; i < letters.length; i++) {
@@ -41,7 +41,7 @@ public class Reverse {
 				revers.add(i, letters[i]);
 			}
 		}
-		for (char a : revers) {
+		for (Object a : revers) {
 			builder.append(a);
 		}
 		return builder.toString();
