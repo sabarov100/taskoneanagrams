@@ -1,12 +1,9 @@
 package com.gmail.sabarov.e.taskoneanagrams;
 
 import java.io.IOException;
-
 import java.util.LinkedList;
 import java.util.List;
 import java.util.StringJoiner;
-
-import static java.lang.Character.isLetter;
 
 public class Reverse {
 
@@ -32,12 +29,12 @@ public class Reverse {
 		char[] letters = word.toCharArray();
 
 		for (int i = 0; i < letters.length; i++) {
-			if (isLetter(letters[letters.length - 1 - i])) {
+			if (Character.isLetter(letters[letters.length - 1 - i])) {
 				revers.add(letters[letters.length - 1 - i]);
 			}
 		}
 		for (int i = 0; i < letters.length; i++) {
-			if (!isLetter(letters[i])) {
+			if (!Character.isLetter(letters[i])) {
 				revers.add(i, letters[i]);
 			}
 		}
