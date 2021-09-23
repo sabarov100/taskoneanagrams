@@ -7,7 +7,7 @@ import java.util.StringJoiner;
 
 public class Reverse {
 
-	public static String reverseOfWordsExpectForSymbols(String argument) throws IOException {
+	public String reverseOfWordsExpectForSymbols(String argument) throws IOException {
 		
 		String whitespace = " ";
 		StringJoiner stringJoiner = new StringJoiner(whitespace);
@@ -22,7 +22,7 @@ public class Reverse {
 		return solution;
 	}
 
-	public static String reverseWord(String word) {
+	public String reverseWord(String word) {
 		
 		StringBuilder builder = new StringBuilder();
 		List revers = new LinkedList();
