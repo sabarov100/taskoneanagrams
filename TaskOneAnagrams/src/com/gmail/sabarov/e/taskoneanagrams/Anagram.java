@@ -5,11 +5,13 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Anagram {
-
+	
 	public static void main(String[] args) throws IOException {
 		
         Scanner scanner = new Scanner(System.in);
-        Reverse.reverseOfWordsExpectForSymbols(scanner.nextLine());
+        String input = scanner.nextLine();
+        Reverse reverse = new Reverse();
+        reverse.reverseOfWordsExpectForSymbols(input);
        
 	}
 
