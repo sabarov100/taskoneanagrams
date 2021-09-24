@@ -6,39 +6,36 @@ import java.util.List;
 import java.util.StringJoiner;
 
 public class Reverse {
+	
+	private static final String SPACE = " ";
 
 	public String reverseOfWordsExpectForSymbols(String argument) throws IOException {
 		
-		String whitespace = " ";
-		StringJoiner stringJoiner = new StringJoiner(whitespace);
-		String solution = reverseWord(argument);
-		String[] words = argument.split(whitespace);
-		if (words.length > 1) {
-			for (int i = 0; i < words.length; i++) {
-				stringJoiner.add(reverseWord(words[i]));
-			}
-			solution = stringJoiner.toString();
+		StringJoiner stringJoiner = new StringJoiner(SPACE);
+		String[] words = argument.split(SPACE);
+		for (String str : words) {
+			stringJoiner.add(reverseWord(str));
 		}
-		return solution;
+		return stringJoiner.toString();
 	}
 
 	public String reverseWord(String word) {
 		
 		StringBuilder builder = new StringBuilder();
-		List revers = new LinkedList();
+		List<Character> reverse = new LinkedList<Character>();
 		char[] letters = word.toCharArray();
 
 		for (int i = 0; i < letters.length; i++) {
 			if (Character.isLetter(letters[letters.length - 1 - i])) {
-				revers.add(letters[letters.length - 1 - i]);
+				reverse.add(letters[letters.length - 1 - i]);
 			}
 		}
 		for (int i = 0; i < letters.length; i++) {
 			if (!Character.isLetter(letters[i])) {
-				revers.add(i, letters[i]);
+				reverse.add(i, letters[i]);
 			}
 		}
-		for (Object a : revers) {
+		for (Character a : reverse) {
 			builder.append(a);
 		}
 		return builder.toString();
