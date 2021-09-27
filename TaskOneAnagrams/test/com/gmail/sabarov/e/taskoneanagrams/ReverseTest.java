@@ -43,6 +43,7 @@ class ReverseTest {
 	}
 	@Test
 	void testNullReverseOfWordsExpectForSymbols() throws IOException {
-		assertEquals("java.lang.NullPointerException", reverseTest.reverseOfWordsExpectForSymbols(null));
+		assertEquals("java.lang.NullPointerException: Cannot invoke \"String.split(String)\" because \"argument\" is null",
+		              reverseTest.reverseOfWordsExpectForSymbols(null));
 	}
 }
