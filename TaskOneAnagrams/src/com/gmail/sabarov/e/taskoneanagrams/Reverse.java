@@ -6,21 +6,24 @@ import java.util.List;
 import java.util.StringJoiner;
 
 public class Reverse {
-	
+
 	private static final String SPACE = " ";
 
 	public String reverseOfWordsExpectForSymbols(String argument) throws IOException {
-		
-		StringJoiner stringJoiner = new StringJoiner(SPACE);
-		String[] words = argument.split(SPACE);
-		for (String str : words) {
-			stringJoiner.add(reverseWord(str));
+		try {
+			StringJoiner stringJoiner = new StringJoiner(SPACE);
+			String[] words = argument.split(SPACE);
+			for (String str : words) {
+				stringJoiner.add(reverseWord(str));
+			}
+			return stringJoiner.toString();
+		} catch (NullPointerException exception) {
+			return exception.toString();
 		}
-		return stringJoiner.toString();
 	}
 
 	public String reverseWord(String word) {
-		
+
 		StringBuilder builder = new StringBuilder();
 		List<Character> reverse = new LinkedList<Character>();
 		char[] letters = word.toCharArray();
