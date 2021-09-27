@@ -10,16 +10,16 @@ public class Reverse {
 	private static final String SPACE = " ";
 
 	public String reverseOfWordsExpectForSymbols(String argument) throws IOException {
-		try {
-			StringJoiner stringJoiner = new StringJoiner(SPACE);
-			String[] words = argument.split(SPACE);
-			for (String str : words) {
-				stringJoiner.add(reverseWord(str));
-			}
-			return stringJoiner.toString();
-		} catch (NullPointerException exception) {
-			return exception.toString();
+
+		if (argument == null) {
+			throw new IllegalArgumentException();
 		}
+		StringJoiner stringJoiner = new StringJoiner(SPACE);
+		String[] words = argument.split(SPACE);
+		for (String str : words) {
+			stringJoiner.add(reverseWord(str));
+		}
+		return stringJoiner.toString();
 	}
 
 	public String reverseWord(String word) {
