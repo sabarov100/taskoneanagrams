@@ -41,4 +41,8 @@ class ReverseTest {
 	void testSymbolsAndNumbersReverseOfWordsExpectForSymbols() throws IOException {
 		assertEquals("21! 37 & 73", reverseTest.reverseOfWordsExpectForSymbols("21! 37 & 73"));
 	}
+	@Test
+	void testNullReverseOfWordsExpectForSymbols() throws IOException {
+		assertEquals("java.lang.NullPointerException", reverseTest.reverseOfWordsExpectForSymbols(null));
+	}
 }
