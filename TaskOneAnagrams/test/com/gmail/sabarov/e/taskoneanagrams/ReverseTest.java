@@ -63,7 +63,7 @@ class ReverseTest {
 		assertEquals(SYMBOLS_AND_NUMBERS, reverseTest.reverseOfWordsExpectForSymbols(SYMBOLS_AND_NUMBERS));
 	}
 	@Test
-	void testNotNullReverseOfWordsExpectForSymbols() throws IOException, IllegalArgumentException {
+	void testNotNullReverseOfWordsExpectForSymbols() throws IOException {
 		Reverse reverseTest = new Reverse();
 		String str = "null";
 		Assert.assertNotNull(reverseTest.reverseOfWordsExpectForSymbols(str));

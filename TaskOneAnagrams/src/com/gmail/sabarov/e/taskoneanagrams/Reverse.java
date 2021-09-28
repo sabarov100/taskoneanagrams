@@ -10,7 +10,6 @@ public class Reverse {
 	private static final String SPACE = " ";
 
 	public String reverseOfWordsExpectForSymbols(String argument) throws IOException {
-
 		if (argument == null) {
 			throw new IllegalArgumentException();
 		}
