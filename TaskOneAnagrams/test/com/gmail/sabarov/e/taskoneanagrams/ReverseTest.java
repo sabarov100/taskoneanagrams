@@ -11,61 +11,73 @@ class ReverseTest {
 
     String ALL_OPTIONS_ACTUAL = "Hel1o w0rld!";
     String ALL_OPTIONS_EXPECTED = "ole1H d0lrw!";
-    String EMPTY = "";
+    String EMPTY_ACTUAL = "";
+    String EMPTY_EXPECTED = "";
     String ONLY_LETTERS_ACTUAL = "HelloWorld";
     String ONLY_LETTERS_EXPECTED = "dlroWolleH";
-    String ONLY_NUMBERS = "0123456789";
-    String ONLY_SYMBOLS = "~!@#$%^&*() {}|:\"?><,./;'[]\\=-";
+    String ONLY_NUMBERS_ACTUAL = "0123456789";
+    String ONLY_NUMBERS_EXPECTED = "0123456789";
+    String ONLY_SYMBOLS_ACTUAL = "~!@#$%^&*() {}|:\"?><,./;'[]\\=-";
+    String ONLY_SYMBOLS_EXPECTED = "~!@#$%^&*() {}|:\"?><,./;'[]\\=-";
     String LETTERS_AND_NUMBERS_ACTUAL = "He11oW0r1d";
     String LETTERS_AND_NUMBERS_EXPECTED = "dr11Wo0e1H";
     String LETTERS_AND_SYMBOLS_ACTUAL = "{Hello world!}";
     String LETTERS_AND_SYMBOLS_EXPECTED = "{olleH dlrow!}";
-    String SYMBOLS_AND_NUMBERS = "21! 37 & 73";
+    String SYMBOLS_AND_NUMBERS_ACTUAL = "21! 37 & 73";
+    String SYMBOLS_AND_NUMBERS_EXPECTED = "21! 37 & 73";
 
     @Test
     void testAllOptionsReverseOfWordsExpectForSymbols() throws IOException {
-        Reverse reverseTest = new Reverse();
-        assertEquals(ALL_OPTIONS_EXPECTED, reverseTest.reverseOfWordsExpectForSymbols(ALL_OPTIONS_ACTUAL));
+        assertEquals(ALL_OPTIONS_EXPECTED, instance().reverseOfWordsExpectForSymbols(ALL_OPTIONS_ACTUAL));
     }
+    
     @Test
     void testEmptyReverseOfWordsExpectForSymbols() throws IOException {
-        Reverse reverseTest = new Reverse();
-        assertEquals(EMPTY, reverseTest.reverseOfWordsExpectForSymbols(EMPTY));
+        assertEquals(EMPTY_EXPECTED, instance().reverseOfWordsExpectForSymbols(EMPTY_ACTUAL));
     }
+    
     @Test
     void testOnlyLettersReverseOfWordsExpectForSymbols() throws IOException {
-        Reverse reverseTest = new Reverse();
-        assertEquals(ONLY_LETTERS_EXPECTED, reverseTest.reverseOfWordsExpectForSymbols(ONLY_LETTERS_ACTUAL));
+        assertEquals(ONLY_LETTERS_EXPECTED, instance().reverseOfWordsExpectForSymbols(ONLY_LETTERS_ACTUAL));
     }
+    
     @Test
     void testOnlyNumbersReverseOfWordsExpectForSymbols() throws IOException {
-        Reverse reverseTest = new Reverse();
-        assertEquals(ONLY_NUMBERS, reverseTest.reverseOfWordsExpectForSymbols(ONLY_NUMBERS));
+        assertEquals(ONLY_NUMBERS_EXPECTED, instance().reverseOfWordsExpectForSymbols(ONLY_NUMBERS_ACTUAL));
     }
+    
     @Test
     void testOnlySymbolsReverseOfWordsExpectForSymbols() throws IOException {
-        Reverse reverseTest = new Reverse();
-        assertEquals(ONLY_SYMBOLS, reverseTest.reverseOfWordsExpectForSymbols(ONLY_SYMBOLS));
+        assertEquals(ONLY_SYMBOLS_EXPECTED, instance().reverseOfWordsExpectForSymbols(ONLY_SYMBOLS_ACTUAL));
     }
+    
     @Test
     void testLettersAndNumbersReverseOfWordsExpectForSymbols() throws IOException {
-        Reverse reverseTest = new Reverse();
-        assertEquals(LETTERS_AND_NUMBERS_EXPECTED, reverseTest.reverseOfWordsExpectForSymbols(LETTERS_AND_NUMBERS_ACTUAL));
+        assertEquals(LETTERS_AND_NUMBERS_EXPECTED, instance().reverseOfWordsExpectForSymbols(LETTERS_AND_NUMBERS_ACTUAL));
     }
+    
     @Test
     void testLettersAndSymbolsReverseOfWordsExpectForSymbols() throws IOException {
-        Reverse reverseTest = new Reverse();
-        assertEquals(LETTERS_AND_SYMBOLS_EXPECTED, reverseTest.reverseOfWordsExpectForSymbols(LETTERS_AND_SYMBOLS_ACTUAL));
+        assertEquals(LETTERS_AND_SYMBOLS_EXPECTED, instance().reverseOfWordsExpectForSymbols(LETTERS_AND_SYMBOLS_ACTUAL));
     }
+    
     @Test
     void testSymbolsAndNumbersReverseOfWordsExpectForSymbols() throws IOException {
-        Reverse reverseTest = new Reverse();
-        assertEquals(SYMBOLS_AND_NUMBERS, reverseTest.reverseOfWordsExpectForSymbols(SYMBOLS_AND_NUMBERS));
+        assertEquals(SYMBOLS_AND_NUMBERS_EXPECTED, instance().reverseOfWordsExpectForSymbols(SYMBOLS_AND_NUMBERS_ACTUAL));
     }
+    
     @Test
     void testNotNullReverseOfWordsExpectForSymbols() throws IOException {
-        Reverse reverseTest = new Reverse();
-        String str = "null";
-        Assert.assertNotNull(reverseTest.reverseOfWordsExpectForSymbols(str));
+        String str = null;
+        try {
+            Assert.assertNotNull(instance().reverseOfWordsExpectForSymbols(str));
+        }
+        catch (IllegalArgumentException exception) {
+            str = "";
+        }
+    }
+    
+    private Reverse instance() {
+        return new Reverse(); 
     }
 }
