@@ -1,9 +1,7 @@
 package com.gmail.sabarov.e.taskoneanagrams;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.io.IOException;
-
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
@@ -26,58 +24,60 @@ class ReverseTest {
     String SYMBOLS_AND_NUMBERS_ACTUAL = "21! 37 & 73";
     String SYMBOLS_AND_NUMBERS_EXPECTED = "21! 37 & 73";
 
-    @Test
+    @Test @instance
     void testAllOptionsReverseOfWordsExpectForSymbols() throws IOException {
-        assertEquals(ALL_OPTIONS_EXPECTED, instance().reverseOfWordsExpectForSymbols(ALL_OPTIONS_ACTUAL));
+        assertEquals(ALL_OPTIONS_EXPECTED, instance.reverse.reverseOfWordsExpectForSymbols(ALL_OPTIONS_ACTUAL));
     }
     
-    @Test
+    @Test @instance 
     void testEmptyReverseOfWordsExpectForSymbols() throws IOException {
-        assertEquals(EMPTY_EXPECTED, instance().reverseOfWordsExpectForSymbols(EMPTY_ACTUAL));
+        assertEquals(EMPTY_EXPECTED, instance.reverse.reverseOfWordsExpectForSymbols(EMPTY_ACTUAL));
     }
     
-    @Test
+    @Test @instance
     void testOnlyLettersReverseOfWordsExpectForSymbols() throws IOException {
-        assertEquals(ONLY_LETTERS_EXPECTED, instance().reverseOfWordsExpectForSymbols(ONLY_LETTERS_ACTUAL));
+        assertEquals(ONLY_LETTERS_EXPECTED, instance.reverse.reverseOfWordsExpectForSymbols(ONLY_LETTERS_ACTUAL));
     }
     
-    @Test
+    @Test @instance
     void testOnlyNumbersReverseOfWordsExpectForSymbols() throws IOException {
-        assertEquals(ONLY_NUMBERS_EXPECTED, instance().reverseOfWordsExpectForSymbols(ONLY_NUMBERS_ACTUAL));
+        assertEquals(ONLY_NUMBERS_EXPECTED, instance.reverse.reverseOfWordsExpectForSymbols(ONLY_NUMBERS_ACTUAL));
     }
     
-    @Test
+    @Test @instance
     void testOnlySymbolsReverseOfWordsExpectForSymbols() throws IOException {
-        assertEquals(ONLY_SYMBOLS_EXPECTED, instance().reverseOfWordsExpectForSymbols(ONLY_SYMBOLS_ACTUAL));
+        assertEquals(ONLY_SYMBOLS_EXPECTED, instance.reverse.reverseOfWordsExpectForSymbols(ONLY_SYMBOLS_ACTUAL));
     }
     
-    @Test
+    @Test @instance
     void testLettersAndNumbersReverseOfWordsExpectForSymbols() throws IOException {
-        assertEquals(LETTERS_AND_NUMBERS_EXPECTED, instance().reverseOfWordsExpectForSymbols(LETTERS_AND_NUMBERS_ACTUAL));
+        assertEquals(LETTERS_AND_NUMBERS_EXPECTED, instance.reverse.reverseOfWordsExpectForSymbols(LETTERS_AND_NUMBERS_ACTUAL));
     }
     
-    @Test
+    @Test @instance
     void testLettersAndSymbolsReverseOfWordsExpectForSymbols() throws IOException {
-        assertEquals(LETTERS_AND_SYMBOLS_EXPECTED, instance().reverseOfWordsExpectForSymbols(LETTERS_AND_SYMBOLS_ACTUAL));
+        assertEquals(LETTERS_AND_SYMBOLS_EXPECTED, instance.reverse.reverseOfWordsExpectForSymbols(LETTERS_AND_SYMBOLS_ACTUAL));
     }
     
-    @Test
+    @Test @instance
     void testSymbolsAndNumbersReverseOfWordsExpectForSymbols() throws IOException {
-        assertEquals(SYMBOLS_AND_NUMBERS_EXPECTED, instance().reverseOfWordsExpectForSymbols(SYMBOLS_AND_NUMBERS_ACTUAL));
+        assertEquals(SYMBOLS_AND_NUMBERS_EXPECTED, instance.reverse.reverseOfWordsExpectForSymbols(SYMBOLS_AND_NUMBERS_ACTUAL));
     }
     
-    @Test
+    @Test @instance
     void testNotNullReverseOfWordsExpectForSymbols() throws IOException {
         String str = null;
         try {
-            Assert.assertNotNull(instance().reverseOfWordsExpectForSymbols(str));
+            Assert.assertNotNull(instance.reverse.reverseOfWordsExpectForSymbols(str));
         }
         catch (IllegalArgumentException exception) {
             str = "";
         }
     }
     
-    private Reverse instance() {
-        return new Reverse(); 
-    }
+        @Test @instance
+    void testThrowsReverseOfWordsExpectForSymbols() throws IOException {
+        String str = null;
+        Assert.assertThrows(IllegalArgumentException.class, () -> instance.reverse.reverseOfWordsExpectForSymbols(str));
+    }   
 }
