@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
-class ReverseTest<LETTERS_AND_SYMBOLS_EXPECTED> {
+class ReverseTest {
 
     private static final String ALL_OPTIONS_ACTUAL = "Hel1o w0rld!";
     private static final String ALL_OPTIONS_EXPECTED = "ole1H d0lrw!";
