@@ -76,9 +76,6 @@ class ReverseTest {
     void testThrowsReverseOfWordsExpectForSymbols() throws IOException {
         String str = null;
         Assert.assertThrows(IllegalArgumentException.class, () -> instance().reverseOfWordsExpectForSymbols(str));
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {    
-        instance().reverseOfWordsExpectForSymbols(null);
-        });
-        assertEquals(TEXT_ILLEGAL_ARGUMENT_EXCEPTION, exception.toString());
+        assertEquals(TEXT_ILLEGAL_ARGUMENT_EXCEPTION, instance().exception.toString());
     }   
 }
