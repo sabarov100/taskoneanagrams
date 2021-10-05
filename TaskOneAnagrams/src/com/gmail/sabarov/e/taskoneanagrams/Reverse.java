@@ -1,6 +1,5 @@
 package com.gmail.sabarov.e.taskoneanagrams;
 
-import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.StringJoiner;
@@ -25,7 +24,7 @@ public class Reverse {
     public String reverseWord(String word) {
 
         StringBuilder builder = new StringBuilder();
-        List<Character> reverse = new LinkedList<Character>();
+        List<Character> reverse = new LinkedList<>();
         char[] letters = word.toCharArray();
 
         for (int i = 0; i < letters.length; i++) {
