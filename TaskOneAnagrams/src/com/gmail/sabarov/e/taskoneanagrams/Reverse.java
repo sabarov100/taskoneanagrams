@@ -9,9 +9,10 @@ public class Reverse {
 
     private static final String SPACE = " ";
 
-    public String reverseOfWordsExpectForSymbols(String argument) throws IOException {
+    public String reverseOfWordsExpectForSymbols(String argument) {
         if (argument == null) {
-            throw new IllegalArgumentException();
+            IllegalArgumentException exception = new IllegalArgumentException();
+            throw exception;
         }
         StringJoiner stringJoiner = new StringJoiner(SPACE);
         String[] words = argument.split(SPACE);
