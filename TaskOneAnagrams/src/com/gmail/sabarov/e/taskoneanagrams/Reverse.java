@@ -8,10 +8,10 @@ import java.util.StringJoiner;
 public class Reverse {
 
     private static final String SPACE = " ";
+    protected static final IllegalArgumentException exception = new IllegalArgumentException();
 
     public String reverseOfWordsExpectForSymbols(String argument) {
-        if (argument == null) {
-            IllegalArgumentException exception = new IllegalArgumentException();
+        if (argument == null) { 
             throw exception;
         }
         StringJoiner stringJoiner = new StringJoiner(SPACE);
