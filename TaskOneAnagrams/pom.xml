@@ -26,7 +26,6 @@
     </plugins>
   </build>
   <dependencies>
-       <!-- https://mvnrepository.com/artifact/org.ec4j.linters/editorconfig-lint-api -->
     <dependency>
       <groupId>org.ec4j.linters</groupId>
       <artifactId>editorconfig-lint-api</artifactId>
