@@ -26,8 +26,7 @@ class ReverseTest {
     private static final String LETTERS_AND_SYMBOLS_EXPECTED = "{olleH dlrow!}";
     private static final String SYMBOLS_AND_NUMBERS_ACTUAL = "21! 37 & 73";
     private static final String SYMBOLS_AND_NUMBERS_EXPECTED = "21! 37 & 73";
-    private static final String TEXT_ILLEGAL_ARGUMENT_EXCEPTION = "java.lang.IllegalArgumentException";
-    
+           
     
     @Before
     private static Reverse instance() {
@@ -78,6 +77,5 @@ class ReverseTest {
     void testThrowsReverseOfWordsExpectForSymbols() throws IOException {
         String str = null;
         assertThrows(IllegalArgumentException.class, () -> instance().reverseOfWordsExpectForSymbols(str));
-        assertEquals(TEXT_ILLEGAL_ARGUMENT_EXCEPTION, instance().exception.toString());
     }   
 }

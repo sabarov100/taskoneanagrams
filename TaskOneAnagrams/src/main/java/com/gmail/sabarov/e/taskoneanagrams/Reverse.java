@@ -7,11 +7,10 @@ import java.util.StringJoiner;
 public class Reverse {
 
     private static final String SPACE = " ";
-    public static final IllegalArgumentException exception = new IllegalArgumentException();
 
     public String reverseOfWordsExpectForSymbols(String argument) {
         if (argument == null) { 
-            throw exception;
+            throw new IllegalArgumentException();
         }
         StringJoiner stringJoiner = new StringJoiner(SPACE);
         String[] words = argument.split(SPACE);

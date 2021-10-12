@@ -10,10 +10,6 @@ public class Main {
         Reverse reverse = new Reverse();
         reverse.reverseOfWordsExpectForSymbols(scanner.nextLine());
     
-        
-        LongColumnDivisioner longColumnDivisioner = new LongColumnDivisioner();
-        System.out.println(longColumnDivisioner.longColumnDivision(405022500, 0));
-
     }
 
 }
