@@ -6,7 +6,7 @@ import java.util.StringJoiner;
 
 public class Reverse {
 
-    private static final String SPACE = " ";
+    private static final String SPACE = " "; 
 
     public String reverseOfWordsExpectForSymbols(String argument) {
         if (argument == null) { 
@@ -14,8 +14,8 @@ public class Reverse {
         }
         StringJoiner stringJoiner = new StringJoiner(SPACE);
         String[] words = argument.split(SPACE);
-        for (String str : words) {
-            stringJoiner.add(reverseWord(str));
+        for (String word : words) {
+            stringJoiner.add(reverseWord(word));
         }
         return stringJoiner.toString();
     }
@@ -36,9 +36,9 @@ public class Reverse {
                 reverse.add(i, letters[i]);
             }
         }
-        for (Character a : reverse) {
-            builder.append(a);
+        for (Character resultChar : reverse) {
+            builder.append(resultChar);
         }
-        return builder.toString();
+        return builder.toString(); 
     }
 }
