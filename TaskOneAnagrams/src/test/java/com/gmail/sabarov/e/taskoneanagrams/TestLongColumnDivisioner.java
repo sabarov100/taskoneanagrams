@@ -58,6 +58,6 @@ class TestLongColumnDivisioner {
     
     @Test
     void testMessegeIllegalArgumentExceptionLongColumnDivision() {
-        assertEquals(TEXT_ILLEGAL_ARGUMENT_EXCEPTION, setUp().longColumnDivision(405022500, 0));
+        assertEquals(TEXT_ILLEGAL_ARGUMENT_EXCEPTION, setUp().exception.toString());
     }
 }
